@@ -1,0 +1,46 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link href="~/css/webuploader.css" rel="stylesheet" />
+    <link href="~/css/diyUpload.css" rel="stylesheet" />
+    <script src="~/js/jquery-1.8.3.min.js"></script>
+    <script src="~/js/webuploader.html5only.min.js"></script>
+    <script src="~/js/diyUpload.js"></script>
+</head>
+<style>
+    .box {
+        margin: 50px 50px 50px 150px;
+        width: 80%;
+        min-height: 100px;
+        background: #FFF;
+        /*border: #0094ff 1px solid;*/
+    }
+</style>
+
+<body>
+    <div>
+        <div class="box">
+            <div id="test1"></div>
+        </div>
+        <input id="imgHidden1" value="" type="hidden" />
+    </div>
+    <script>
+
+     $('#test1').diyUpload({
+        ///需要自定义参数 直接加url后面
+         url: '/Home/Upload',
+        success: function (data) {
+            console.log(data);
+        }
+    });
+
+    </script>
+</body>
+</html>
